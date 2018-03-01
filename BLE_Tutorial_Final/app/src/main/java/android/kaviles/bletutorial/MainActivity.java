@@ -14,6 +14,8 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.ScrollView;
 
+import com.firebase.client.Firebase;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -29,8 +31,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ListView listView;
 
     private Button btn_Scan;
-
-    private Firebase mRootRef;
 
     private BroadcastReceiver_BTState mBTStateUpdateReceiver;
     private Scanner_BTLE mBTLeScanner;
