@@ -21,6 +21,7 @@ public class ListAdapter_BTLE_Devices extends ArrayAdapter<BTLE_Device> {
     ArrayList<BTLE_Device> devices;
 
     Firebase mRootRef;
+//    Firebase mRootRef;
 
     public ListAdapter_BTLE_Devices(Activity activity, int resource, ArrayList<BTLE_Device> objects) {
         super(activity.getApplicationContext(), resource, objects);
@@ -30,6 +31,7 @@ public class ListAdapter_BTLE_Devices extends ArrayAdapter<BTLE_Device> {
         devices = objects;
 
         mRootRef = new Firebase("https://posisisapidb.firebaseio.com/receiver/ble");
+//        mRootRef = new Firebase("https://posisisapidb.firebaseio.com/receiver/ble");
     }
 
     @Override
@@ -53,6 +55,8 @@ public class ListAdapter_BTLE_Devices extends ArrayAdapter<BTLE_Device> {
         tv = (TextView) convertView.findViewById(R.id.tv_name);
         String value = tv.getText().toString();
         mRootRef.push().setValue(value);
+//        String value = tv.getText().toString();
+//        mRootRef.push().setValue(value);
         if (name != null && name.length() > 0) {
             tv.setText(device.getName());
         }
@@ -65,9 +69,13 @@ public class ListAdapter_BTLE_Devices extends ArrayAdapter<BTLE_Device> {
 
         String sign = tv.getText().toString();
         mRootRef.setValue(sign);
+//        String sign = tv.getText().toString();
+//        mRootRef.setValue(sign);
         tv = (TextView) convertView.findViewById(R.id.tv_macaddr);
         String addr = tv.getText().toString();
         mRootRef.setValue(addr);
+//        String addr = tv.getText().toString();
+//        mRootRef.setValue(addr);
         if (address != null && address.length() > 0) {
             tv.setText(device.getAddress());
         }
